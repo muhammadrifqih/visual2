@@ -1,0 +1,68 @@
+object FormMenuUtama: TFormMenuUtama
+  Left = 0
+  Top = 0
+  Caption = 'TOKO DELPHI'
+  ClientHeight = 226
+  ClientWidth = 505
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  FormStyle = fsMDIForm
+  Menu = MainMenu1
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object MainMenu1: TMainMenu
+    Left = 16
+    Top = 8
+    object BarangMasuk1: TMenuItem
+      Caption = 'Barang Masuk'
+    end
+    object Stok1: TMenuItem
+      Caption = 'Stok'
+    end
+    object BarangKeluar1: TMenuItem
+      Caption = 'Barang Keluar'
+    end
+  end
+  object ADOConnection1: TADOConnection
+    Connected = True
+    ConnectionString = 'Provider=MSDASQL.1;Persist Security Info=False;Data Source=toko'
+    Left = 120
+    Top = 8
+  end
+  object ADOTable1: TADOTable
+    Active = True
+    Connection = ADOConnection1
+    CursorType = ctStatic
+    TableName = 'barang_masuk'
+    Left = 24
+    Top = 72
+    object ADOTable1id_barang_masuk: TAutoIncField
+      FieldName = 'id_barang_masuk'
+      ReadOnly = True
+    end
+    object ADOTable1kode_barang: TWideStringField
+      FieldName = 'kode_barang'
+      Size = 100
+    end
+    object ADOTable1nama_barang: TWideStringField
+      FieldName = 'nama_barang'
+      Size = 100
+    end
+    object ADOTable1jenis_barang: TWideStringField
+      FieldName = 'jenis_barang'
+      Size = 100
+    end
+    object ADOTable1jumlah: TWideStringField
+      FieldName = 'jumlah'
+      Size = 100
+    end
+    object ADOTable1tanggal_masuk: TDateField
+      FieldName = 'tanggal_masuk'
+    end
+  end
+end
